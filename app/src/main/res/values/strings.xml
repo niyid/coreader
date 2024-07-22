@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Coreader</string>
+    <string name="prompt_paragraph">Paragraph will be displayed here</string>
+    <string name="label_upload">Upload PDF</string>
+    <string name="label_ready">Ready</string>
+    <string name="label_start">Start Coreading</string>
+</resources>
