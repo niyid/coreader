@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    tools:context=".CoreadActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:rowCount="1">
+
+        <TextView
+            android:id="@+id/readerCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/ic_readers" />
+
+        <TextView
+            android:id="@+id/pageCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/ic_paragraph" />
+
+        <ImageButton
+            android:id="@+id/readyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/ready_button_description"
+            android:src="@mipmap/ic_ready" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/pageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:autoLink="web"
+        android:fadeScrollbars="false"
+        android:maxLines="100"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        />
+
+</LinearLayout>
