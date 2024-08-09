@@ -196,5 +196,6 @@ our data practices, please contact us at niyid@techducat.com.</p>
     <string name="paragraph_icon_description">Paragraph</string>
     <string name="page_icon_description">Page</string>
     <string name="readers_icon_description">Readers</string>
+    <string name="book_completed">Book reading complete!</string>
 
 </resources>

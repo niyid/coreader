@@ -456,7 +456,7 @@ class MainActivity : AppCompatActivity(), NotificationInterface, CellphoneAcquis
         }
     }
 
-    override fun onSessionsUpdated(count: Int, page: Int, pageHtml: String) {
+    override fun onSessionsUpdated(count: Int, page: Int, pageCount: Int, pageHtml: String) {
         Log.i(TAG, "onSessionsUpdated - does nothing")
     }
 

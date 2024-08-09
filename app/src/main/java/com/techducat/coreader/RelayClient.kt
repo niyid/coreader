@@ -228,6 +228,7 @@ class RelayClient private constructor() {
         Log.i(TAG, "handleSessionUpdateResponse - $response")
         val count = response["count"] as Double
         val page = response["current_page"] as Double
+        val pageCount = response["page_count"] as Double
         val pageHtml = response["page"] as String
 
         for (notificationInterface in notificationInterfaces) {
@@ -235,7 +236,9 @@ class RelayClient private constructor() {
                 notificationInterface.runOnUiThread {
                     notificationInterface.onSessionsUpdated(
                         count.toInt(),
-                        page.toInt(), pageHtml
+                        page.toInt(),
+                        pageCount.toInt(),
+                        pageHtml
                     )
                 }
             }
@@ -312,7 +315,6 @@ class RelayClient private constructor() {
         Log.i(TAG, "PDF upload completed - $deviceId, $sessionId")
     }
 
-
     private fun getInputStreamFromUri(context: Context, uri: Uri): InputStream? {
         return context.contentResolver.openInputStream(uri)
     }
@@ -323,7 +325,6 @@ class RelayClient private constructor() {
     }
 
     fun close() {
-        rem
         client.close()
     }
 }

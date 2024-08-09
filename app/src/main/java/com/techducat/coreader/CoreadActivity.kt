@@ -16,6 +16,7 @@ import android.text.Html
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
@@ -42,7 +43,6 @@ class CoreadActivity : AppCompatActivity(), NotificationInterface {
     private lateinit var title: String
     private lateinit var relayClient: RelayClient
     private var notificationId = 0
-    private var paragraphList = emptySequence<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,7 +102,15 @@ class CoreadActivity : AppCompatActivity(), NotificationInterface {
         notify(getString(R.string.readers_update, count))
     }
 
-    override fun onSessionsUpdated(count: Int, page: Int, pageHtml: String) {
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onSessionsUpdated(count: Int, page: Int, pageCount: Int, pageHtml: String) {
+        if(pageCount == page) {
+            readyButton.isEnabled = false
+            showToast(getString(R.string.book_completed))
+        }
         readerCountTextView.text = count.toString()
         pageCountTextView.text = page.toString()
         pageTextView.text = Html.fromHtml(pageHtml, Html.FROM_HTML_MODE_LEGACY)
