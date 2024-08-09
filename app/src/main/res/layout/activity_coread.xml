@@ -70,12 +70,13 @@
         android:layout_marginRight="16dp"
         android:autoLink="web"
         android:fadeScrollbars="false"
-        android:maxLines="100"
+        android:maxLines="20"
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="vertical"
         android:scrollHorizontally="false"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:contentDescription="@string/page_text_content_description"
         />
 
 </LinearLayout>

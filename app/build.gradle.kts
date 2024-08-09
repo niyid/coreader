@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id(libs.plugins.androidApplication.get().pluginId)
+    id(libs.plugins.jetbrainsKotlinAndroid.get().pluginId)
     id("org.gradle.version-catalog")
     id("com.github.ben-manes.versions") version "0.47.0"
 }
